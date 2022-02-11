@@ -19,6 +19,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='location_dest_id']" position="after">
                 <field name='picking_date' attrs="{'invisible':[('purchase_id','=',False)]}"/>
+                <field name="purchase_id" invisible="1"/>
             </xpath>
         </field>
     </record>
