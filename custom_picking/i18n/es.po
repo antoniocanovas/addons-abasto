@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_taxedprice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-29 10:09+0000\n"
+"PO-Revision-Date: 2021-11-29 11:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: product_taxedprice
+#: model:base.automation,name:product_taxedprice.product_update_pvp2net
+#: model:ir.actions.server,name:product_taxedprice.product_update_pvp2net_ir_actions_server
+msgid "=> Cálculo precio neto desde PVP impuestos incluídos"
+msgstr ""
+
+#. module: product_taxedprice
+#: model:ir.model.fields,field_description:product_taxedprice.field_product_template__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: product_taxedprice
+#: model:ir.model.fields,field_description:product_taxedprice.field_product_template__id
+msgid "ID"
+msgstr ""
+
+#. module: product_taxedprice
+#: model:ir.model.fields,field_description:product_taxedprice.field_product_template____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: product_taxedprice
+#: model:ir.model.fields,field_description:product_taxedprice.field_product_product__list_price_taxed
+#: model:ir.model.fields,field_description:product_taxedprice.field_product_template__list_price_taxed
+msgid "List price with tax"
+msgstr "Precio imp"
+
+#. module: product_taxedprice
+#: model:ir.model,name:product_taxedprice.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
