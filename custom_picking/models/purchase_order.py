@@ -7,7 +7,7 @@ _logger = logging.getLogger(__name__)
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
-    picking_date = fields.Date(string='Picking Date')
+    picking_date = fields.Date(string='Fecha albarán')
 
     @api.depends('name', 'partner_ref', 'picking_date')
     def name_get(self):
