@@ -9,6 +9,7 @@
     'author': 'Serincloud',
     'depends': [
         'purchase',
+        'base_automation',
         'stock_picking_back2draft',
         'stock_delivery_note',
         'stock_picking_invoice_link',
