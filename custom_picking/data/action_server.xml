@@ -10,7 +10,7 @@ if (record.purchase_id.id) and (ref) and (record.origin != ref):
     record['origin'] = ref
             </field>
             <field name="trigger">on_create</field>
-            <field name="trigger_field_ids" eval="[(6,0, [ref('product_taxedprice.field_product_template__list_price_taxed')])]"/>
+            <field name="trigger_field_ids" eval="False"/>
             <field name="filter_pre_domain"></field>
             <field name="filter_domain"></field>
             <field name="active" eval="True"/>            
