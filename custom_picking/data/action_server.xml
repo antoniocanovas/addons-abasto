@@ -11,7 +11,7 @@ if (record.purchase_id.id) and (ref) and (record.origin != ref):
 if (not record.picking_date) and (record.purchase_id.picking_date):
     record['picking_date'] = record.purchase_id.picking_date
             </field>
-            <field name="trigger">on_change</field>
+            <field name="trigger">on_write</field>
             <field name="trigger_field_ids" eval="False"/>
             <field name="filter_pre_domain"></field>
             <field name="filter_domain"></field>
