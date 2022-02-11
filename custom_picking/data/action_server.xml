@@ -5,9 +5,12 @@
             <field name="model_id" ref="model_stock_picking"/>
             <field name="state">code</field>
             <field name="code">
+# Actualizar ORIGEN del albarán con el campo documentado en la compra:
 ref = record.purchase_id.partner_ref
-if (record.purchase_id.id) and (ref) and (record.origin != ref):
+if (record.purchase_id.id) and (ref):
+  if (record.origin != ref) or (record.origin == record.purchase_id.name):
     record['origin'] = ref
+# Actualizar el campo nuevo de fecha real de albarán con el de la compra, si no hay otra documentada (porque van con retrasos):
 if (not record.picking_date) and (record.purchase_id.picking_date):
     record['picking_date'] = record.purchase_id.picking_date
             </field>
