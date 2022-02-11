@@ -1,13 +1,13 @@
 <odoo>
 
         <record id="picking_origin_update_if_purchase_partner_ref" model="base.automation">
-            <field name="name">=> Actualizar campo origen si existe partner_ref en compra</field>
+            <field name="name">IC: Actualizar campo origen si existe partner_ref en compra</field>
             <field name="model_id" ref="model_stock_picking"/>
             <field name="state">code</field>
             <field name="code">
-                ref = record.purchase_id.partner_ref
-                if (record.purchase_id.id) and (ref) and (record.origin != ref):
-                    record['origin'] = ref
+ref = record.purchase_id.partner_ref
+if (record.purchase_id.id) and (ref) and (record.origin != ref):
+    record['origin'] = ref
             </field>
             <field name="trigger">on_create</field>
             <field name="trigger_field_ids" eval="[(6,0, [ref('product_taxedprice.field_product_template__list_price_taxed')])]"/>
