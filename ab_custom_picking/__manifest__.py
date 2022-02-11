@@ -1,5 +1,5 @@
 {
-    'name': 'Custom Picking',
+    'name': 'AB Custom Picking',
     'version': '14.0.1.0.0',
     'category': '',
     'description': u"""
