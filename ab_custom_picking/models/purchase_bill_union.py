@@ -1,4 +1,5 @@
 from odoo import _, api, fields, models
+import datetime
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -16,6 +17,8 @@ class PurchaseBillUnion(models.Model):
             if doc.reference:
                 name += ' - ' + doc.reference
             if doc.picking_date:
-                name += ': ' + str(doc.picking_date)
+                date_inv_dt = datetime.datetime.strftime(doc.picking_date, '%d/%m/%Y')
+                name += ': ' + str(date_inv_dt)
+
             result.append((doc.id, name))
         return result
