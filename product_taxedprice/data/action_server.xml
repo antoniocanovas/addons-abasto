@@ -5,6 +5,7 @@
             <field name="model_id" ref="model_product_template"/>
             <field name="state">code</field>
             <field name="code">
+neto = record.list_price
 price = record.list_price_taxed
 taxed_percent = 0
 for tax in record.taxes_id:
