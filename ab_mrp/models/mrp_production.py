@@ -7,7 +7,6 @@ from odoo import fields, models
 class MrpBom(models.Model):
     _inherit = "mrp.production"
 
-    #group_id = fields.Many2one('mrp.bom.group', string='Group')
     timesheet_ids = fields.One2many('account.analytic.line', 'mrp_id', string='Timesheets')
     group_id = fields.Many2one('mrp.bom.group', string='Tipo de trabajo')
     bom_easy_id = fields.Many2one('mrp.bom', string='Receta')
