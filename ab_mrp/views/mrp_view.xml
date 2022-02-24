@@ -77,7 +77,7 @@
                                 <field name="use_create_components_lots" invisible="1"/>
                                 <field name="show_lot_ids" invisible="1"/>
                                 <field name="product_tracking" invisible="1"/>
-                                <field name="group_id" required="1"/>
+                                <field name="group_id" required="1" widget="selection"/>
                                 <field name="bom_easy_id" domain="[('group_id', '=', group_id)]"/>
                                 <field name="product_id" force_save="1" context="{'default_type': 'product'}" attrs="{'readonly':['|',('state', '!=', 'draft'),('bom_easy_id','!=',False)]}"/>
                                 <field name="product_tmpl_id" force_save="1" invisible="1"/>
