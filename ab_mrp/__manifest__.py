@@ -10,6 +10,9 @@
     "website": "https://github.com/OCA/account-analytic",
     "license": "AGPL-3",
     "depends": ["mrp_bom_group", "hr_timesheet", 'base_automation'],
-    "data": ["views/mrp_view.xml", "views/menu_views.xml", "data/actualiza_lista_materiales.xml",],
+    "data": ["views/mrp_view.xml",
+             "views/menu_views.xml",
+             "data/actualiza_lista_materiales.xml",
+             "static/description/icon.png"],
     "installable": True,
 }
