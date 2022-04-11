@@ -26,7 +26,7 @@
             id="menu_production"
             name="Producción"
             sequence="10"
-            web_icon="mrp_simple,static/description/icon.png"
+            web_icon="ab_mrp,static/description/icon.png"
     />
 
 
