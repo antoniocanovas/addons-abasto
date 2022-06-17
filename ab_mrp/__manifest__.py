@@ -11,6 +11,7 @@
     "license": "AGPL-3",
     "depends": ["mrp_bom_group", "hr_timesheet", 'base_automation'],
     "data": ["views/mrp_view.xml",
+             "views/product_product_view.xml",
              "views/menu_views.xml",
              "data/actualiza_lista_materiales.xml"],
     "installable": True,
