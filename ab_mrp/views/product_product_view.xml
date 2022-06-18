@@ -4,7 +4,7 @@
     <record id="product_product_labels_form" model="ir.ui.view">
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
-<form string="Products labels">
+            <form string="Products labels">
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -12,7 +12,7 @@
                         </h1>
                     </div>
                     <group name="Printed fields">
-                        <field name="printed_lot"/>
+                        <field name="printed_lot" domain="[('product_id','=',active_id)]"/>
                         <field name="printed_expiration"/>
                     </group>
                     <notebook>
@@ -53,6 +53,26 @@
         <field name="name">Custom form for product labels</field>
         <field name="priority">99</field>
         <field name="type">form</field>
+    </record>
+
+    <record id="product_product_labels_tree" model="ir.ui.view">
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <tree string="Products labels" create_edit="0">
+                <field name="name"/>
+                <field name="categ_id" string="Product Category"/>
+                <field name="description" nolabel="1" placeholder="This note is only for internal purposes."/>
+            </tree>
+        </field>
+        <field name="field_parent" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="inherit_id" eval="False"/>
+        <field name="key" eval="False"/>
+        <field name="mode">primary</field>
+        <field name="model">product.product</field>
+        <field name="name">Custom tree for product labels</field>
+        <field name="priority">99</field>
+        <field name="type">tree</field>
     </record>
 
 </odoo>
