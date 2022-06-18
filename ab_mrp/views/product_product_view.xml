@@ -58,7 +58,7 @@
     <record id="product_product_labels_tree" model="ir.ui.view">
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
-            <tree string="Products labels" create_edit="0">
+            <tree name="Products labels" create="False" edit="False">
                 <field name="name"/>
                 <field name="categ_id" string="Product Category"/>
                 <field name="description" nolabel="1" placeholder="This note is only for internal purposes."/>
