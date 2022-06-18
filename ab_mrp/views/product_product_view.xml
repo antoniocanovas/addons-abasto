@@ -11,6 +11,10 @@
                             <field name="name" readonly="1"/>
                         </h1>
                     </div>
+                    <group name="Printed fields">
+                        <field name="printed_lot" domain="[('product_id','=',record.id)]"/>
+                        <field name="printed_expiration"/>
+                    </group>
                     <notebook>
                         <page string="General Information" name="general_information">
                             <group>
