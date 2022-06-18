@@ -58,10 +58,17 @@
     <record id="product_product_labels_tree" model="ir.ui.view">
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
-            <tree name="Products labels" create="False" edit="False">
-                <field name="name"/>
-                <field name="categ_id" string="Product Category"/>
-                <field name="description" nolabel="1" placeholder="This note is only for internal purposes."/>
+            <tree name="Products labels" create="False">
+                <field name="default_code" optional="show" readonly="1"/>
+                <field name="barcode" optional="hide" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="product_template_attribute_value_ids" widget="many2many_tags" groups="product.group_product_variant" readonly="1"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide" readonly="1"/>
+                <field name="categ_id" optional="hide"/>
+                <field name="type" optional="hide" readonly="1"/>
+                <field name="uom_id" options="{'no_open': True, 'no_create': True}" groups="uom.group_uom" optional="show" readonly="1"/>
+                <field name="product_tmpl_id" invisible="1" readonly="1"/>
+                <field name="active" invisible="1"/>
             </tree>
         </field>
         <field name="field_parent" eval="False"/>
