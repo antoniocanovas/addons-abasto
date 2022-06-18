@@ -58,7 +58,7 @@
     <record id="product_product_labels_tree" model="ir.ui.view">
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
-            <tree name="Products labels" create="False">
+            <tree name="Products labels" create="false">
                 <field name="default_code" optional="show" readonly="1"/>
                 <field name="barcode" optional="hide" readonly="1"/>
                 <field name="name" readonly="1"/>
