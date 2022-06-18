@@ -12,7 +12,7 @@
                         </h1>
                     </div>
                     <group name="Printed fields">
-                        <field name="printed_lot" attrs="{'domain':[('product_id','=',record.id)]}"/>
+                        <field name="printed_lot"/>
                         <field name="printed_expiration"/>
                     </group>
                     <notebook>
