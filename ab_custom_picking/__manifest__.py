@@ -17,7 +17,7 @@
         'stock_picking_sale_order_link',
         'stock_picking_send_by_mail',
         'stock_picking_warn_message',
-        #'purchase_stock_picking_invoice_link ',
+        'purchase_order_line_menu',
 
     ],
     'data': [
