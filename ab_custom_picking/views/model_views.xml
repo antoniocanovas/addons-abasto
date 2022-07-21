@@ -44,7 +44,7 @@
                 <tree string="Purchase Order Lines Abasto" create="false">
                     <field name="product_id"/>
                     <field name="partner_id" string="Vendor"/>
-                    <field name="x_partner_ref"/>
+                    <field name="partner_ref"/>
                     <field name="picking_date" optional="hide"/>
                     <field name="order_id" optional="hide"/>
                     <field name="name" optional="hide"/>
