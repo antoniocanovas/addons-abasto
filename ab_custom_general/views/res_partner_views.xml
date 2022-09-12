@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="ab_restrict_customer_invoiced_form_inh" model="ir.ui.view">
+        <field name="name">=> Restrict to manager customer invoiced.</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.partner_view_buttons"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_partner_invoices']" position="attributes">
+                <attribute name="groups">'account.group_account_manager'</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
