@@ -46,7 +46,6 @@ class ProjectTask(models.Model):
                 self.env['account.analytic.line'].create({'name': record.name,
                                                           'account_id': record.project_id.analytic_account_id.id,
                                                           'task_id': record.id,
-                                                          'set_start_stop': True,
                                                           'employee_id': record.user_id.employee_id.id,
                                                           'product_uom_id': hour_uom.id,
                                                           'user_id': record.user_id.id,
