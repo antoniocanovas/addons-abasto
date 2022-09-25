@@ -9,6 +9,8 @@ from odoo import api, fields, models, _
 class ProjectTask(models.Model):
     _inherit = "project.task"
 
+    is_closed = fields.Boolean(store=True)
+
     def button_task_done(self):
         for record in self:
             state_done = self.env['project.task.type'].search([('is_closed','=',True),('id','in',record.project_id.type_ids.ids)])[0]
