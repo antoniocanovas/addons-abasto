@@ -32,7 +32,6 @@
             </tree>
 
         </field>
-        <field name="domain">[('active','=',True),('is_closed','='False')]</field>
         <field name="field_parent" eval="False"/>
         <field name="groups_id" eval="[(6, 0, [])]"/>
         <field name="inherit_id" eval="False"/>
@@ -48,7 +47,7 @@
     <record id="action_waiter_task" model="ir.actions.act_window">
         <field name="binding_model_id" eval="False"/>
         <field name="binding_type">action</field>
-        <field name="domain" eval="False"/>
+        <field name="domain">[('active','=',True),('is_closed','='False')]</field>
         <field name="filter" eval="False"/>
         <field name="groups_id" eval="[(6, 0, [])]"/>
         <field name="limit">80</field>
