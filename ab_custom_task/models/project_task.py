@@ -18,11 +18,12 @@ class ProjectTask(models.Model):
                 record.stage_id = state_done.id
             # else mensaje "no hay etapa de cierre"
 
-    def button_task_user_timesheet(self):
+    def button_start_work_task_user(self):
         for record in self:
             self.env['account.analytic.line'].create({'name': record.name,
                                                  'account_id': record.project_id.analytic_account_id.id,
                                                  'task_id': record.id,
                                                  'set_start_stop': True,
                                                  'employee_id': record.user_id.employee_id.id,
-                                                 'user_id': record.user_id.id})
+                                                 'user_id': record.user_id.id,
+                                                 'show_time_control': 'start'})
