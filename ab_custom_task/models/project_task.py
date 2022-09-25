@@ -24,9 +24,9 @@ class ProjectTask(models.Model):
 
     def button_task_done(self):
         for record in self:
-            state_done = self.env['project.task.type'].search([('is_closed','=',True),('id','in',record.project_id.type_ids.ids)])[0]
+            stage_done = self.env['project.task.type'].search([('is_closed','=',True),('id','in',record.project_id.type_ids.ids)])[0]
             if stage_done.id:
-                record.stage_id = state_done.id
+                record.stage_id = stage_done.id
             # else mensaje "no hay etapa de cierre"
 
     def button_start_work_task_user(self):
