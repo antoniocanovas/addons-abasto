@@ -36,7 +36,7 @@ class ProjectTask(models.Model):
     def button_end_work_ab(self):
         for record in self:
             for li in record.timesheet_ids:
-                if li.date_time and not li.date_time_end:
+                if li.date_time and not li.unit_amount:
                     li.unit_amount = ((datetime.now() - li.date_time).seconds / 3600)
 
     def button_task_done_ab(self):
@@ -49,9 +49,10 @@ class ProjectTask(models.Model):
                                                           'employee_id': record.user_id.employee_id.id,
                                                           'product_uom_id': hour_uom.id,
                                                           'user_id': record.user_id.id,
+                                                          'unit_amount':1/12,
                                                           })
             for li in record.timesheet_ids:
-                if li.date_time and not li.date_time_end:
+                if li.date_time and not li.unit_amount:
                     li.unit_amount = ((datetime.now() - li.date_time).seconds / 3600)
 
             stage_done = self.env['project.task.type'].search([('is_closed','=',True),('id','in',record.project_id.type_ids.ids)])[0]
