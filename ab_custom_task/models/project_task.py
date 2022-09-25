@@ -12,7 +12,7 @@ class ProjectTask(models.Model):
 
     is_closed = fields.Boolean(store=True)
 
-    @api.depends('timesheet_ids.date_time', 'unit_amount')
+    @api.depends('timesheet_ids.date_time', 'timesheet_ids.unit_amount')
     def get_ab_started(self):
         for record in self:
             started = False
