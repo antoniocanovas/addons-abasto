@@ -25,10 +25,12 @@ class ProjectTask(models.Model):
 
     def button_start_work_ab(self):
         for record in self:
+            hour_uom = self.env.ref("uom.product_uom_hour")
             self.env['account.analytic.line'].create({'name': record.name,
                                                  'account_id': record.project_id.analytic_account_id.id,
                                                  'task_id': record.id,
                                                  'employee_id': record.user_id.employee_id.id,
+                                                 'product_uom_id': hour_uom,
                                                  'user_id': record.user_id.id})
 
     def button_end_work_ab(self):
@@ -40,11 +42,13 @@ class ProjectTask(models.Model):
     def button_task_done_ab(self):
         for record in self:
             if not record.timesheet_ids.ids:
+                hour_uom = self.env.ref("uom.product_uom_hour")
                 self.env['account.analytic.line'].create({'name': record.name,
                                                           'account_id': record.project_id.analytic_account_id.id,
                                                           'task_id': record.id,
                                                           'set_start_stop': True,
                                                           'employee_id': record.user_id.employee_id.id,
+                                                          'product_uom_id': hour_uom,
                                                           'user_id': record.user_id.id,
                                                           })
             for li in record.timesheet_ids:
