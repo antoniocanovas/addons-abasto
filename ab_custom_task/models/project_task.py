@@ -5,6 +5,7 @@
 #    PedroGuirao pedro@serincloud.com
 ##############################################################################
 from odoo import api, fields, models, _
+from datetime import datetime
 
 class ProjectTask(models.Model):
     _inherit = "project.task"
