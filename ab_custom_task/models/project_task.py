@@ -17,7 +17,7 @@ class ProjectTask(models.Model):
         for record in self:
             started = False
             for li in record.timesheet_ids:
-                if li.date_time and not li.date_time_end:
+                if li.date_time and not li.unit_amount:
                     started = True
         record.ab_started = started
     ab_started = fields.Boolean('Started', store=True, compute=get_ab_started)
