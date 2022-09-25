@@ -4,4 +4,4 @@
 #    Copyright (C) 2021 Serincloud S.L. All Rights Reserved
 #    PedroGuirao pedro@serincloud.com
 ##############################################################################
- from . import project_task
+from . import project_task
