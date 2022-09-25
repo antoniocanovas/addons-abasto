@@ -30,7 +30,7 @@ class ProjectTask(models.Model):
                                                  'account_id': record.project_id.analytic_account_id.id,
                                                  'task_id': record.id,
                                                  'employee_id': record.user_id.employee_id.id,
-                                                 'product_uom_id': hour_uom,
+                                                 'product_uom_id': hour_uom.id,
                                                  'user_id': record.user_id.id})
 
     def button_end_work_ab(self):
@@ -48,7 +48,7 @@ class ProjectTask(models.Model):
                                                           'task_id': record.id,
                                                           'set_start_stop': True,
                                                           'employee_id': record.user_id.employee_id.id,
-                                                          'product_uom_id': hour_uom,
+                                                          'product_uom_id': hour_uom.id,
                                                           'user_id': record.user_id.id,
                                                           })
             for li in record.timesheet_ids:
