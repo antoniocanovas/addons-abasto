@@ -16,6 +16,7 @@
     "depends": [
         'project',
         'project_timesheet_time_control',
+        'web_widget_open_tab',
     ],
     "data": [
         'views/project_task_view.xml'
