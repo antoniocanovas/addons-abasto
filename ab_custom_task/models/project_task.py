@@ -12,7 +12,7 @@ class ProjectTask(models.Model):
     is_closed = fields.Boolean(store=True)
 
     @api.depends('timesheet_ids.date_time', 'timesheet_ids.date_time_end')
-    def get_ab_stage(self):
+    def get_ab_started(self):
         for record in self:
             started = False
             for li in record.timesheet_ids:
@@ -20,7 +20,7 @@ class ProjectTask(models.Model):
                     started = False
         record.ab_started = started
 
-    ab_stage = fields.Boolean('ab_stage', store=True, compute=get_ab_stage)
+    ab_started = fields.Boolean('Started', store=True, compute=get_ab_started)
 
     def button_task_done(self):
         for record in self:
