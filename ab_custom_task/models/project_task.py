@@ -42,4 +42,4 @@ class ProjectTask(models.Model):
         for record in self:
             for li in record.timesheet_ids:
                 if li.date_time and not li.date_time_end:
-                    li.date_time_end = datetime.datetime.now()
+                    li.date_time_end = datetime.now()
