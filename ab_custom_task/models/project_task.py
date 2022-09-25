@@ -36,7 +36,7 @@ class ProjectTask(models.Model):
         for record in self:
             for li in record.timesheet_ids:
                 if li.date_time and not li.date_time_end:
-                    li.write({'date_time_end:datetime.now(), 'unit_amount':4})
+                    li.write({'date_time_end':datetime.now(), 'unit_amount':4})
                     #li.unit_amount = 3
 
     def button_task_done_ab(self):
