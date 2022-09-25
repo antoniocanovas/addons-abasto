@@ -15,7 +15,8 @@
     "license": "AGPL-3",
     "depends": [
         'project',
-        'project_timesheet_time_control',
+        'hr_timesheet_activity_begin_end',
+#        'project_timesheet_time_control',
     ],
     "data": [
         'views/project_task_view.xml'
