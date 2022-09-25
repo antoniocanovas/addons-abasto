@@ -5,14 +5,14 @@
 #    PedroGuirao pedro@serincloud.com
 ##############################################################################
 from odoo import api, fields, models, _
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class ProjectTask(models.Model):
     _inherit = "project.task"
 
     is_closed = fields.Boolean(store=True)
 
-    @api.depends('timesheet_ids.date_time', 'timesheet_ids.date_time_end')
+    @api.depends('timesheet_ids.time_begin', 'timesheet_ids.date_time_end')
     def get_ab_started(self):
         for record in self:
             started = False
@@ -36,8 +36,7 @@ class ProjectTask(models.Model):
         for record in self:
             for li in record.timesheet_ids:
                 if li.date_time and not li.date_time_end:
-                    li.write({'date_time_end':datetime.now()})
-                    #li.unit_amount = 3
+                    li.unit_amount = ((datetime.now() - li.date_time).seconds / 3600)
 
     def button_task_done_ab(self):
         for record in self:
@@ -51,7 +50,7 @@ class ProjectTask(models.Model):
                                                           })
             for li in record.timesheet_ids:
                 if li.date_time and not li.date_time_end:
-                    li.date_time_end = datetime.now()
+                    li.unit_amount = ((datetime.now() - li.date_time).seconds / 3600)
 
             stage_done = self.env['project.task.type'].search([('is_closed','=',True),('id','in',record.project_id.type_ids.ids)])[0]
             if stage_done.id:
