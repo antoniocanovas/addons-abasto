@@ -59,9 +59,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="view_mode">tree</field>
         <field name="view_ids" eval="[(5, 0, 0),
-        (0, 0, {'view_mode': 'tree', 'view_id': ref('waiter_task_tree_view')}),
-        ]"/>
-
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('waiter_task_tree_view')})]"/>
     </record>
 
     <menuitem
