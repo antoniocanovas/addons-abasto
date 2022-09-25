@@ -9,13 +9,7 @@ from odoo import api, fields, models, _
 class ProjectTask(models.Model):
     _inherit = "project.task"
 
-#    def get_sale_attachment(self):
-    #        for record in self:
-    #        sales = []
-    #        for aml in record.invoice_line_ids:
-    #            for li in aml.sale_line_ids:
-    #                if li.order_id.id not in sales:
-    #                    sales.append(li.order_id.id)
-    #        data = self.env['ir.attachment'].search([('res_model', '=', 'sale.order'), ('res_id', 'in', sales)])
-    #        record.sale_attachment_ids = [(6, 0, data.ids)]
-    #    sale_attachment_ids = fields.Many2many(comodel_name='ir.attachment',)
+    def button_task_done(self):
+        for record in self:
+            state_done = self.env['project.task.type'].search([('is_closed','=',True),('id','in',record.project_id.type_ids.ids)])[0]
+            record.stage_id = state_done.id
