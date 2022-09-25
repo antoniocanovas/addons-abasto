@@ -28,7 +28,7 @@ class ProjectTask(models.Model):
                 record.stage_id = stage_done.id
             # else mensaje "no hay etapa de cierre"
 
-    def button_start_work_task_user(self):
+    def button_start_work_ab(self):
         for record in self:
             self.env['account.analytic.line'].create({'name': record.name,
                                                  'account_id': record.project_id.analytic_account_id.id,
