@@ -29,7 +29,7 @@
                 <field name="ab_started" invisible="1"/>
                 <button name="button_start_work_ab" string="Start work" tabindex="-1" type="object" icon="fa-play-circle text-success" attrs="{'invisible': [('ab_started', '=', True)]}" class="oe_stat_button" title="Start work"/>
                 <button name="button_end_work_ab" string="Stop work" tabindex="-1" type="object" icon="fa-stop-circle text-warning" attrs="{'invisible': [('ab_started', '=', False)]}" class="oe_stat_button" title="End work"/>
-                <button name="button_task_done" string="Hecho" tabindex="-1" type="object" icon="fa-sign-out text-warning" attrs="{'invisible': [('ab_started', '=', False)]}" class="oe_stat_button" title="Hecho"/>
+                <button name="button_task_done_ab" string="Hecho" tabindex="-1" type="object" icon="fa-sign-out text-warning" class="oe_stat_button" title="Hecho"/>
             </tree>
 
         </field>

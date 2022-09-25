@@ -22,12 +22,6 @@ class ProjectTask(models.Model):
         record.ab_started = started
     ab_started = fields.Boolean('Started', store=True, compute=get_ab_started)
 
-    def button_task_done(self):
-        for record in self:
-            stage_done = self.env['project.task.type'].search([('is_closed','=',True),('id','in',record.project_id.type_ids.ids)])[0]
-            if stage_done.id:
-                record.stage_id = stage_done.id
-            # else mensaje "no hay etapa de cierre"
 
     def button_start_work_ab(self):
         for record in self:
@@ -43,3 +37,23 @@ class ProjectTask(models.Model):
             for li in record.timesheet_ids:
                 if li.date_time and not li.date_time_end:
                     li.date_time_end = datetime.now()
+
+    def button_task_done_ab(self):
+        for record in self:
+            if not record.timesheet_ids.ids:
+                self.env['account.analytic.line'].create({'name': record.name,
+                                                          'account_id': record.project_id.analytic_account_id.id,
+                                                          'task_id': record.id,
+                                                          'set_start_stop': True,
+                                                          'employee_id': record.user_id.employee_id.id,
+                                                          'user_id': record.user_id.id,
+                                                          })
+            for li in record.timesheet_ids:
+                if li.date_time and not li.date_time_end:
+                    li.date_time_end = datetime.now()
+
+            stage_done = self.env['project.task.type'].search([('is_closed','=',True),('id','in',record.project_id.type_ids.ids)])[0]
+            if stage_done.id:
+                record.stage_id = stage_done.id
+            else:
+                raise Warning("No hay etapa de cierre en este proyecto")
