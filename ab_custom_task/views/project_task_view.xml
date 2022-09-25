@@ -1,9 +1,9 @@
 <odoo>
 
-    <record id="waiter_task_view" model="ir.ui.view">
+    <record id="waiter_task_tree_view" model="ir.ui.view">
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
-            <tree string="Para hoy" multi_edit="1" sample="1">
+<tree string="Para hoy" multi_edit="1" sample="1" editable="top">
                 <field name="message_needaction" invisible="1" readonly="1"/>
                 <field name="is_closed" invisible="1"/>
                 <field name="sequence" invisible="1" readonly="1"/>
@@ -11,9 +11,9 @@
                 <field name="project_id" optional="show" readonly="1"/>
                 <field name="partner_id" optional="hide"/>
                 <field name="parent_id" groups="project.group_subtask_project" optional="hide"/>
-                <field name="user_id" optional="show" widget="many2one_avatar_user"/>
-                <field name="company_id" groups="base.group_multi_company" optional="show"/>
-                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="user_id" widget="many2one_avatar_user"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="activity_ids" widget="list_activity" optional="hide"/>
                 <field name="date_deadline" optional="hide" widget="remaining_days" attrs="{'invisible': [('is_closed', '=', True)]}"/>
                 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" optional="show"/>
                 <field name="kanban_state" widget="state_selection" optional="hide" readonly="1"/>
@@ -24,7 +24,7 @@
                 <field name="remaining_hours" widget="timesheet_uom" sum="Remaining Hours" optional="hide" decoration-danger="progress &gt;= 100" decoration-warning="progress &gt;= 80 and progress &lt; 100"/>
                 <field name="subtask_effective_hours" widget="timesheet_uom" attrs="{'invisible' : [('allow_subtasks', '=', False)]}" optional="hide"/>
                 <field name="total_hours_spent" widget="timesheet_uom" attrs="{'invisible' : [('allow_subtasks', '=', False)]}" optional="hide"/>
-                <field name="progress" widget="progressbar" optional="show" groups="hr_timesheet.group_hr_timesheet_user"/>
+                <field name="progress" widget="progressbar" optional="hide" groups="hr_timesheet.group_hr_timesheet_user"/>
                 <field name="show_time_control" invisible="1"/>
                 <button name="button_start_work" string="Start work" tabindex="-1" type="object" icon="fa-play-circle text-success" attrs="{'invisible': [('show_time_control', '!=', 'start')]}" class="oe_stat_button" title="Start work"/>
                 <button name="button_end_work" string="Stop work" tabindex="-1" type="object" icon="fa-stop-circle text-warning" attrs="{'invisible': [('show_time_control', '!=', 'stop')]}" class="oe_stat_button" title="End work"/>
@@ -55,6 +55,10 @@
         <field name="target">current</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_mode">tree</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('waiter_task_tree_view')}),
+        ]"/>
+
     </record>
 
     <menuitem
