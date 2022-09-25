@@ -32,6 +32,7 @@
             </tree>
 
         </field>
+        <field name="domain">[('active','=',True),('is_closed','='False')]</field>
         <field name="field_parent" eval="False"/>
         <field name="groups_id" eval="[(6, 0, [])]"/>
         <field name="inherit_id" eval="False"/>
