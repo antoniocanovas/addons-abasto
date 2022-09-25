@@ -25,5 +25,4 @@ class ProjectTask(models.Model):
                                                  'task_id': record.id,
                                                  'set_start_stop': True,
                                                  'employee_id': record.user_id.employee_id.id,
-                                                 'user_id': record.user_id.id,
-                                                 'show_time_control': 'start'})
+                                                 'user_id': record.user_id.id})
