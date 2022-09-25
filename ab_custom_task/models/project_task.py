@@ -36,3 +36,9 @@ class ProjectTask(models.Model):
                                                  'set_start_stop': True,
                                                  'employee_id': record.user_id.employee_id.id,
                                                  'user_id': record.user_id.id})
+
+    def button_end_work_ab(self):
+        for record in self:
+            for li in record.timesheet_ids:
+                if li.date_time and not li.date_time_end:
+                    li.date_time_end = datetime.datetime.now()
