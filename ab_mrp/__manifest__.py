@@ -13,6 +13,7 @@
     "data": ["views/mrp_view.xml",
              "views/product_product_view.xml",
              "views/menu_views.xml",
-             "data/actualiza_lista_materiales.xml"],
+             "data/actualiza_lista_materiales.xml",
+             "views/report_simple_label.xml"],
     "installable": True,
 }
