@@ -11,7 +11,7 @@ class ProjectTask(models.Model):
 
     is_closed = fields.Boolean(store=True)
 
-    @api_depends('timesheet_ids.date_time', 'timesheet_ids.date_time_end')
+    @api.depends('timesheet_ids.date_time', 'timesheet_ids.date_time_end')
     def get_ab_stage(self):
         hidden = True
         for li in record.timesheet_ids:
