@@ -58,7 +58,7 @@
     </record>
 
     <menuitem
-            action="menu_waiter_task"
+            action="action_waiter_task"
             id="menu_waiter_task"
             name="Tareas"
             sequence="50"
