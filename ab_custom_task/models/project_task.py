@@ -14,11 +14,11 @@ class ProjectTask(models.Model):
     @api.depends('timesheet_ids.date_time', 'timesheet_ids.date_time_end')
     def get_ab_stage(self):
         for record in self:
-            hidden = True
+            started = False
             for li in record.timesheet_ids:
                 if li.date_time and not li.date_time_end:
-                    hidden = False
-        record.ab_stage = hidden
+                    started = False
+        record.ab_started = started
 
     ab_stage = fields.Boolean('ab_stage', store=True, compute=get_ab_stage)
 
