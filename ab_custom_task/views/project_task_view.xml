@@ -7,15 +7,15 @@
                 <field name="message_needaction" invisible="1" readonly="1"/>
                 <field name="is_closed" invisible="1"/>
                 <field name="sequence" invisible="1" readonly="1"/>
-                <field name="name"/>
-                <field name="project_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}"/>
+                <field name="name" attrs="{'readonly':[('ab_task_is_readonly', '=', True)]}"/>
+                <field name="project_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" attrs="{'readonly':[('ab_task_is_readonly', '=', True)]}"/>
                 <field name="partner_id" optional="hide" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}"/>
                 <field name="parent_id" groups="project.group_subtask_project" optional="hide"/>
-                <field name="user_id" widget="many2one_avatar_user" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}"/>
+                <field name="user_id" widget="many2one_avatar_user" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" attrs="{'readonly':[('ab_task_is_readonly', '=', True)]}"/>
                 <field name="company_id" groups="base.group_multi_company" optional="hide"/>
                 <field name="activity_ids" widget="list_activity" optional="hide"/>
-                <field name="date_deadline" optional="hide" widget="remaining_days" attrs="{'invisible': [('is_closed', '=', True)]}"/>
-                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" optional="show"/>
+                <field name="date_deadline" optional="show" widget="remaining_days" attrs="{'readonly':[('ab_task_is_readonly', '=', True)]}, 'invisible': [('is_closed', '=', True)]}"/>
+                <field name="tag_ids" widget="many2many_tags" attrs="{'readonly':[('ab_task_is_readonly', '=', True)]}" options="{'color_field': 'color', 'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" optional="show"/>
                 <field name="kanban_state" widget="state_selection" optional="hide" readonly="1"/>
                 <field name="stage_id" invisible="context.get('set_visible',False)" optional="hide" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}"/>
                 <field name="allow_subtasks" invisible="1"/>
@@ -27,6 +27,7 @@
                 <field name="progress" widget="progressbar" optional="hide" groups="hr_timesheet.group_hr_timesheet_user"/>
                 <field name="show_time_control" invisible="1"/>
                 <field name="ab_started" invisible="1"/>
+                <field name="ab_tas_is_readonly" invisible="1"/>
                 <button name="button_start_work_ab" string="Start work" tabindex="-1" type="object" icon="fa-play-circle text-success" attrs="{'invisible': [('ab_started', '=', True)]}" class="oe_stat_button" title="Start work"/>
                 <button name="button_end_work_ab" string="Stop work" tabindex="-1" type="object" icon="fa-stop-circle text-warning" attrs="{'invisible': [('ab_started', '=', False)]}" class="oe_stat_button" title="End work"/>
                 <button name="button_task_done_ab" string="Hecho" tabindex="-1" type="object" icon="fa-sign-out text-warning" class="oe_stat_button" title="Hecho"/>

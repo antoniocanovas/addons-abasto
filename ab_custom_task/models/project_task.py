@@ -23,6 +23,17 @@ class ProjectTask(models.Model):
     ab_started = fields.Boolean('Started', store=True, compute=get_ab_started)
 
 
+    def get_ab_task_is_readonly(self):
+        for record in self:
+            ro = True
+            pm = self.env['ir.model.data'].search(
+                [('name', '=', 'group_project_manager'), ('model', '=', 'res.groups')])
+            gr = self.env['res.groups'].search([('id', '=', pm.res_id)])
+            if (self.env.user.id in gr.users.ids) or (record.create_uid == self.env.user):
+                ro = False
+            record.ab_task_is_readonly = ro
+    ab_task_is_readonly = fields.Boolean('Readonly', store=False, compute=get_ab_task_is_readonly)
+
     def button_start_work_ab(self):
         for record in self:
             hour_uom = self.env.ref("uom.product_uom_hour")
