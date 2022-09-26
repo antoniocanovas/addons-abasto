@@ -3,7 +3,7 @@
     <record id="waiter_task_tree_view" model="ir.ui.view">
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
-            <tree string="Para hoy" multi_edit="1" sample="1" editable="top">
+            <tree string="Para hoy" multi_edit="1" sample="1" editable="top" default_order='date_deadline'>
                 <field name="message_needaction" invisible="1" readonly="1"/>
                 <field name="is_closed" invisible="1"/>
                 <field name="sequence" invisible="1" readonly="1"/>
