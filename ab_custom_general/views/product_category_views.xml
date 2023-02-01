@@ -2,8 +2,8 @@
 <odoo>
 
     <record id="ab_product_category_company_form_inh" model="ir.ui.view">
-        <field name="name">=> Company in pos category</field>
-        <field name="model">pos.category</field>
+        <field name="name">=> Company in product category</field>
+        <field name="model">product.category</field>
         <field name="type">form</field>
         <field name="inherit_id" ref="product.product_category_form_view"/>
         <field name="arch" type="xml">
