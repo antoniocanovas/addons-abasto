@@ -19,14 +19,13 @@
         <field name="type">search</field>
         <field name="arch" type="xml">
             <search>
-                    <field name="name"/>
-                    <field name="parent_id"/>
-                    <field name="company_id"/>
-                    <separator/>
-                    <group expand="1" string="Group By">
-                        <filter string="Company" name="type" context="{'group_by':'company_id'}"/>
-                    </group>
-                </field>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="company_id"/>
+                <separator/>
+                <group expand="1" string="Group By">
+                    <filter string="Company" name="type" context="{'group_by':'company_id'}"/>
+                </group>
             </search>
         </field>
     </record>
