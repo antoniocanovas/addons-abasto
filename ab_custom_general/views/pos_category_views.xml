@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <odoo>
 
-    <record id="ab_pos_category_company_form_inh" model="ir.ui.view">
+    <record id="ab_pos_category_form_inh" model="ir.ui.view">
         <field name="name">=> Company in pos category</field>
         <field name="model">pos.category</field>
         <field name="type">form</field>
@@ -10,6 +10,24 @@
             <xpath expr="//field[@name='sequence']" position="after">
                 <field name="company_id"/>
             </xpath>
+        </field>
+    </record>
+
+    <record id="ab_pos_category_search_inh" model="ir.ui.view">
+        <field name="name">=> AB search in pos category</field>
+        <field name="model">pos.category</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search>
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="company_id"/>
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter string="Company" name="type" context="{'group_by':'company_id'}"/>
+                    </group>
+                </field>
+            </search>
         </field>
     </record>
 
