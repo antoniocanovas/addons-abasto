@@ -25,6 +25,9 @@
                 <field name="bom_id" position="attributes">
                     <attribute name="domain">[('group_id','=',group_id)]</attribute>
                 </field>
+                <field name="bom_id" position="after">
+                    <field name="printed_expiration"/>
+                </field>
 
                 <xpath expr="//notebook" position="attributes">
                     <attribute name="groups">mrp.group_mrp_manager</attribute>
