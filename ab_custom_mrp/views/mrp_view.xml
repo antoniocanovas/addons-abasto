@@ -2,7 +2,7 @@
 <odoo>
 
     <record id="mrp_custom_production_inh_form" model="ir.ui.view">
-        <field name="name">mrp.custom.production.inh.for</field>
+        <field name="name">mrp.custom.production.inh.form</field>
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
             <data>
@@ -36,7 +36,7 @@
             </data>
         </field>
         <field name="field_parent" eval="False"/>
-        <field name="inherit_id" eval="mrp.mrp_production_form_view"/>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
         <field name="model">mrp.production</field>
         <field name="priority">99</field>
         <field name="type">form</field>

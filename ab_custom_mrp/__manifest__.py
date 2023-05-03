@@ -9,7 +9,9 @@
     "author": "Serincloud",
     "website": "https://ingenieriacloud.com",
     "license": "AGPL-3",
-    "depends": ["mrp_bom_group"],
+    "depends": ["mrp_bom_group",
+                "web_widget_numeric_step",
+                ],
     "data": ["views/mrp_view.xml",
              "data/default_rules.xml",
 #             "views/report_simple_label.xml"
