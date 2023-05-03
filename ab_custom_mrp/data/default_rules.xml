@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.rule" id="mrp_user_ab_rule">
+        <field name="name">mrp.user.ab.rule</field>
+        <field name="model_id" ref="model_mrp_production"></field>
+        <field name="domain_force">[('user_id','=',user.id),('state','not in',['cancel'])]</field>
+        <field name="groups" eval="[(6, 0, [ref('mrp.group_mrp_user')])]"/>
+        <field eval="1" name="perm_write"></field>
+        <field eval="1" name="perm_read"></field>
+        <field eval="0" name="perm_unlink"></field>
+        <field eval="0" name="perm_create"></field>
+    </record>
+
+    <record model="ir.rule" id="mrp_admin_ab_rule">
+        <field name="name">mrp.admin.ab.rule</field>
+        <field name="model_id" ref="model_mrp_production"></field>
+        <field name="domain_force">[(1,'=', 1)]</field>
+        <field name="groups" eval="[(6, 0, [ref('mrp.group_mrp_manager')])]"/>
+        <field eval="1" name="perm_write"></field>
+        <field eval="1" name="perm_read"></field>
+        <field eval="1" name="perm_unlink"></field>
+        <field eval="1" name="perm_create"></field>
+    </record>
+
+</odoo>
