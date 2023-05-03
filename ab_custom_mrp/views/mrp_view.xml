@@ -15,6 +15,9 @@
                 <xpath expr="//button[@name='button_scrap']" position='attributes'>
                     <attribute name="groups">mrp.group_mrp_manager</attribute>
                 </xpath>
+                <xpath expr="//button[@name='button_unbuild']" position='attributes'>
+                    <attribute name="groups">mrp.group_mrp_manager</attribute>
+                </xpath>
 
                 <field name="id" position="after">
                     <field name="group_id"/>
