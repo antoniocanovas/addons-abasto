@@ -15,5 +15,5 @@
              "views/menu_views.xml",
              "data/actualiza_lista_materiales.xml",
              "views/report_simple_label.xml"],
-    "installable": True,
+    "installable": False,
 }
