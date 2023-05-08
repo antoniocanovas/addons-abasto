@@ -38,7 +38,8 @@
                 </xpath>
                 <field name="qty_producing" position="attributes">
                     <attribute name="widget">numeric_step</attribute>
-                    <attribute name="options">{'step':1, 'min': -1, 'max': 10}</attribute>
+                    <attribute name="options">{'step':1}</attribute>
+               <!--     <attribute name="options">{'step':1, 'min': -1, 'max': 10}</attribute>   -->
                 </field>
             </data>
         </field>
