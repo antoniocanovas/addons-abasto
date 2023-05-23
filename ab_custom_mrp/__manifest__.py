@@ -13,6 +13,7 @@
                 "web_widget_numeric_step",
                 ],
     "data": ["views/mrp_view.xml",
+             "views/product_views.xml",
              "data/default_rules.xml",
 #             "views/report_simple_label.xml"
              ],
