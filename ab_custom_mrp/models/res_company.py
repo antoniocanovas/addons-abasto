@@ -3,7 +3,7 @@
 
 from odoo import fields, models
 
-    class ResCompany(models.Model):
+class ResCompany(models.Model):
     _inherit = 'res.company'
 
     reg_sanitario = fields.Char('Registro sanitario', store=True)
