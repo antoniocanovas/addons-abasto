@@ -6,5 +6,5 @@ from odoo import fields, models
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    reg_sanitario = fields.Char('Registro sanitario', store=True)
-    aut_sanitaria = fields.Char('Autorización sanitaria', store=True)
+    reg_sanitario = fields.Char('Registro', store=True)
+    aut_sanitaria = fields.Char('Autorización', store=True)
