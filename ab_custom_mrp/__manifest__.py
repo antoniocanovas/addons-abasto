@@ -14,6 +14,7 @@
                 ],
     "data": ["views/mrp_view.xml",
              "views/product_views.xml",
+             "views/res_company_views.xml",
              "data/default_rules.xml",
 #             "views/report_simple_label.xml"
              ],

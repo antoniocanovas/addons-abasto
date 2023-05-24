@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_company_sanitary_data_view" model="ir.ui.view">
+        <field name="name">Datos del registro sanitario</field>
+        <field name="model">res.company</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="after">
+                <page name="registro_sanitario" string="Registro sanitario">
+                    <group>
+                        <field name="reg_sanitario"/>
+                        <field name="aut_sanitaria"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -12,6 +12,6 @@ class ProductTemplate(models.Model):
     alergeno    = fields.Text('Alérgenos', store=True)
     consumo    = fields.Char('Consumo', store=True)
     conservacion = fields.Char('Conservacion', store=True)
-
+    qr_url = fields.Char('Url QR', store=True)
 
 

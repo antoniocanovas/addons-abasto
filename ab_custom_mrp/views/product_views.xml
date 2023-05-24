@@ -14,6 +14,7 @@
                         <field name="alergeno"/>
                         <field name="consumo"/>
                         <field name="conservacion"/>
+                        <field name="qr_url"/>
                     </group>
                 </page>
             </xpath>
