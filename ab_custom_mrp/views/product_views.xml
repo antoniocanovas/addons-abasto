@@ -15,6 +15,7 @@
                         <field name="consumo"/>
                         <field name="conservacion"/>
                         <field name="qr_url"/>
+                        <field name="qr_image" widget="image"/>
                     </group>
                 </page>
             </xpath>
