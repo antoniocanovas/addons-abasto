@@ -48,11 +48,11 @@ class ProductTemplate(models.Model):
             temp = BytesIO()
             img.save(temp, format="PNG")
             qr_image = base64.b64encode(temp.getvalue())
-            self.write({'qr_image': qr_image})
+            self.qr_image = qr_image
 #            return self.env.ref(
 #                'customer_product_qrcode.print_qr').report_action(self, data={
 #                'data': self.id, 'type': 'cust'})
         else:
             raise UserError(
                 _('Necessary Requirements To Run This Operation Is Not Satisfied'))
-    qr_image = fields.Binary('QR Code', store=True)
+    qr_image = fields.Binary('QR Image', store=True)
