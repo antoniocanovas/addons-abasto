@@ -48,7 +48,7 @@ class ProductTemplate(models.Model):
             temp = BytesIO()
             img.save(temp, format="PNG")
             qr_image = base64.b64encode(temp.getvalue())
-            self.write({'qr': qr_image})
+            self.write({'qr_image': qr_image})
 #            return self.env.ref(
 #                'customer_product_qrcode.print_qr').report_action(self, data={
 #                'data': self.id, 'type': 'cust'})
