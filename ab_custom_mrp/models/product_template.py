@@ -24,7 +24,7 @@ class ProductTemplate(models.Model):
     conservacion = fields.Char('Conservacion', store=True)
     qr_url = fields.Char('Url QR', store=True)
 
-    @api.depends('qr_url')
+    @api.depends('qr_url', 'write_date')
     def generate_qr(self):
         if qrcode and base64:
 #            if not self.sequence:
