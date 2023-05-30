@@ -17,6 +17,7 @@ from odoo.exceptions import UserError
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
+    nombre_etiqueta = fields.Char('Nombre etiqueta', store=True)
     ingrediente  = fields.Text('Ingredientes', store=True)
     conservante = fields.Text('Conservantes y colorantes', store=True)
     alergeno    = fields.Text('Alérgenos', store=True)

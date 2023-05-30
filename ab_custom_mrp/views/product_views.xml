@@ -9,6 +9,7 @@
             <xpath expr="//notebook" position="inside">
                 <page name="elaboracion" string="Elaboración">
                     <group>
+                        <field name="nombre_etiqueta"/>
                         <field name="ingrediente"/>
                         <field name="conservante"/>
                         <field name="alergeno"/>
