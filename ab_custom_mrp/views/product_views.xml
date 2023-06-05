@@ -9,12 +9,14 @@
             <xpath expr="//notebook" position="inside">
                 <page name="elaboracion" string="Elaboración">
                     <group>
+                        <field name="nombre_etiqueta"/>
                         <field name="ingrediente"/>
                         <field name="conservante"/>
                         <field name="alergeno"/>
                         <field name="consumo"/>
                         <field name="conservacion"/>
                         <field name="qr_url"/>
+                        <field name="qr_image" widget="image"/>
                     </group>
                 </page>
             </xpath>
