@@ -16,7 +16,7 @@
              "views/product_views.xml",
              "views/res_company_views.xml",
              "data/default_rules.xml",
-#             "views/report_simple_label.xml"
+#             "views/label_production_view_pdf.xml"
              ],
     "installable": True,
 }

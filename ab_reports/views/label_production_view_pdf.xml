@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="label_production_view_pdf_inh_report" model="ir.ui.view">
+        <field name="name">label.production.view.pdf.inh.report</field>
+        <field name="inherit_id" ref="mrp.production.label_production_view_pdf"/>
+        <field name="arch" type="xml">
+
+            <data>
+                <xpath expr="//div" position="replace">
+                    <div style="display: inline-table;">
+
+                        <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 290px; height: 380px; ">
+
+                            <tr>
+                                <td colspan="2" class="table-active" style="height: 3.5rem; font-size: 18px;">
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="text-align: right; margin-right: 20px; margin-top: -15px;"><strong style="font-size: 16px;" t-field="move_line.product_id.nombre_etiqueta"/></div>
+                                        <div>
+                                            <img t-if="env.company.logo" t-att-src="image_data_uri(env.company.logo)" style="height: 50px; width: 100px; text-align: left; margin: -10px; margin-left: 20px;" alt="Logo"/>
+                                            <div style="text-align: right; margin-right: 20px; margin-bottom: -15px;">
+                                                <strong style="font-size: 16px;">Price:</strong>
+                                                <strong style="font-size: 16px;" t-field="move_line.product_id.lst_price"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <t t-if="move_line.product_id.ingrediente">
+                                <tr>
+                                    <td colspan="2" style="width: 50%; font-size: 10px; margin: 0px; padding: 0px;">
+                                        <p style="margin: 0; padding: 0px;">Ingredients: <span t-field="move_line.product_id.ingrediente"/></p>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="move_line.product_id.conservante">
+                                <tr>
+                                    <td colspan="2" style="width: 50%; font-size: 10px; margin: 0px; padding: 0px;">
+                                        <p style="margin: 0; padding: 0px;">Preservatives and dyes: <span t-field="move_line.product_id.conservante"/></p>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="move_line.product_id.alergeno">
+                                <tr>
+                                    <th colspan="2" style="width: 50%; font-size: 10px; margin: 0px; padding: 0px;">
+                                        <span t-field="move_line.product_id.alergeno"/>
+                                    </th>
+                                </tr>
+                            </t>
+                            <t t-if="move_line.product_id.conservacion">
+                                <tr>
+                                    <td colspan="2" style="width: 50%; font-size: 10px; margin: 0px; padding: 0px;">
+                                        <p style="margin: 0; padding: 0px;">Conservation: <span t-field="move_line.product_id.conservacion"/></p>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="env.company.reg_sanitario and env.company.aut_sanitaria">
+                                <tr>
+                                    <td colspan="2" style="width: 50%; font-size: 10px; margin: 0px; padding: 0px;">
+                                        <span t-field="env.company.reg_sanitario"/>|<span t-field="env.company.aut_sanitaria"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="production.printed_expiration">
+                                <tr>
+                                    <td colspan="2" style="width: 50%; font-size: 10px; margin: 0px; padding: 0px;">
+                                        <p style="margin: 0; padding: 0px;">Expiration date: <span t-field="production.printed_expiration"/></p>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="production.lot_producing_id">
+                                <tr>
+                                    <td colspan="2" style="width: 50%; font-size: 10px; margin: 0px; padding: 0px;">
+                                        <p style="margin: 0; padding: 0px;">Lot number: <span t-field="production.lot_producing_id"/></p>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="move_line.product_id.qr_url and move_line.product_id.qr_image">
+                                <tr>
+                                    <td colspan="2" style="font-size: 10px; margin: 0px; padding: 0px; text-align:center;">
+                                        <span t-field="move_line.product_id.qr_url" style="margin-top: 0px; padding: 5px;"/>
+                                        <br/>
+                                        <img t-att-src="'data:image/png;base64,%s' % to_text(move_line.product_id.qr_image)" style="height:70px; width:70px; padding: 5px;"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                </xpath>
+            </data>
+
+        </field>
+        <field name="type">qweb</field>
+        <field name="priority">999</field>
+    </record>
+</odoo>

@@ -14,6 +14,6 @@
              "views/product_product_view.xml",
              "views/menu_views.xml",
              "data/actualiza_lista_materiales.xml",
-             "views/report_simple_label.xml"],
+             "views/label_production_view_pdf.xml"],
     "installable": False,
 }
