@@ -10,11 +10,11 @@
     "website": "https://ingeniriacloud.com",
     "license": "AGPL-3",
     "depends": ['inventory',
-                "ab_custom_mrp",
-                "mrp",
+                'ab_custom_mrp',
+                'mrp',
                 ],
     "data": [
-        "views/label_production_view_pdf.xml",
+        'views/label_production_view_pdf.xml',
     ],
     "installable": True,
 }
