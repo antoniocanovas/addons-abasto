@@ -3,7 +3,7 @@
 
     <record id="label_production_view_pdf_inh_report" model="ir.ui.view">
         <field name="name">label.production.view.pdf.inh.report</field>
-        <field name="inherit_id" ref="mrp.production.label_production_view_pdf"/>
+        <field name="inherit_id" ref="mrp.label_production_view_pdf"/>
         <field name="arch" type="xml">
 
             <data>
