@@ -10,7 +10,7 @@
     "website": "https://ingeniriacloud.com",
     "license": "AGPL-3",
     "depends": ['inventory',
-                "addons-ab",
+                "ab_custom_mrp,
                 "mrp",
                 ],
     "data": [
