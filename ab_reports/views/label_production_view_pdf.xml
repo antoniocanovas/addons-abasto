@@ -18,7 +18,7 @@
                                             <img t-if="env.company.logo" t-att-src="image_data_uri(env.company.logo)" style="height: 40px; width: 80px; text-align: left; margin: -10px; margin-left: 10px;" alt="Logo"/>
                                             <div style="text-align: right; margin-right: 10px; margin-bottom: -15px;">
                                                 <strong style="font-size: 14px;">Price:</strong>
-                                                <strong style="font-size: 14px;" t-field="move_line.product_id.lst_price" t-options="{'widget': 'monetary', 'display_currency': product.company_id.currency_id}"/>
+                                                <strong style="font-size: 14px;" t-field="move_line.product_id.lst_price" t-options="{'widget': 'monetary', 'display_currency': move_line.company_id.currency_id}"/>
                                             </div>
                                         </div>
                                     </div>
