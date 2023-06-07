@@ -15,6 +15,7 @@
     ],
     "data": [
         'views/label_production_view_pdf.xml',
+        'views/report_simple_barcode.xml',
     ],
     "installable": True,
 }
