@@ -9,7 +9,7 @@
             <data>
                 <xpath expr="//th" position="replace">
                     <th class="table-active text-center align-middle" style="height: 4rem;">
-                        <strong t-field="product.display_name"/>
+                        <strong t-field="product.nombre_etiqueta"/>
                         <br/>
                         <img t-if="env.company.logo" t-att-src="image_data_uri(env.company.logo)" style="height: 50px; width: 100px;" alt="Logo"/>
                     </th>
