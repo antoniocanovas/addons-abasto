@@ -2,6 +2,7 @@
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 class MrpBom(models.Model):
     _inherit = "mrp.production"
@@ -17,6 +18,7 @@ class MrpBom(models.Model):
     def _update_mrp_stock_move_date(self):
         for record in self:
             stockmoves = self.env['stock.move'].search([('production_id','=',record.id)])
+            raise UserError(stockmoves)
             for sm in stockmoves:
                 sm['date'] = record.elaboration_date
 
