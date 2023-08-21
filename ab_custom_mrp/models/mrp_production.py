@@ -15,9 +15,10 @@ class MrpBom(models.Model):
     elaboration_date = fields.Datetime('Fecha elaboración', store=True, copy=False)
 
     # No funciona, lo hago con AS manaul hasta que pueda dedicar más tiempo:
-    @api.onchange('elaboration_date')
+    @api.onchange('write_date')
     def update_mrp_stock_move_date(self):
         sms = self.env['stock.move'].search([('production_id','=',self.id)])
         for sm in sms:
-            sm['date'] = self.elaboration_date
+            if sm.date != record.elaboration_date
+                sm['date'] = self.elaboration_date
 
