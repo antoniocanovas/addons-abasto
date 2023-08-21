@@ -15,7 +15,8 @@
     "data": ["views/mrp_view.xml",
              "views/product_views.xml",
              "views/res_company_views.xml",
-             "views/stock_production_lot_views.xml",
+# Quitada 21/08/23 porque no la encuentra (después de cambios de Javier):
+#             "views/stock_production_lot_views.xml",
              "data/default_rules.xml",
 #             "views/label_production_view_pdf.xml"
              ],
