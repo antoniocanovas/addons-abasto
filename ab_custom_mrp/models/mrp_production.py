@@ -16,9 +16,8 @@ class MrpBom(models.Model):
 
     @api.onchange('elaboration_date')
     def _update_mrp_stock_move_date(self):
-        for record in self:
-            stockmoves = self.env['stock.move'].search([('production_id','=',record.id)])
-            raise UserError(stockmoves)
-            for sm in stockmoves:
-                sm['date'] = record.elaboration_date
+        stockmoves = self.env['stock.move'].search([('production_id','=',self.id)])
+        raise UserError(stockmoves)
+        for sm in stockmoves:
+            sm['date'] = self.elaboration_date
 
