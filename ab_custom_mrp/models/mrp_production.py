@@ -14,7 +14,7 @@ class MrpBom(models.Model):
     # Nuevo campo para cambar fechas de SM de elaboraciones documentadas de forma tardía:
     elaboration_date = fields.Datetime('Fecha elaboración', store=True, copy=False)
 
-    @api.depends('elaboration_date')
+    @api.onchange('elaboration_date')
     def update_mrp_stock_move_date(self):
         stockmoves = self.env['stock.move'].search([('production_id','=',self.id)])
         raise UserError(stockmoves)
