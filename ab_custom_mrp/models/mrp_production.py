@@ -19,6 +19,6 @@ class MrpBom(models.Model):
     def update_mrp_stock_move_date(self):
         sms = self.env['stock.move'].search([('production_id','=',self.id)])
         for sm in sms:
-            if sm.date != record.elaboration_date
+            if sm.date != record.elaboration_date:
                 sm['date'] = self.elaboration_date
 
