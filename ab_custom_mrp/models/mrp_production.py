@@ -11,5 +11,12 @@ class MrpBom(models.Model):
     group_id = fields.Many2one('mrp.bom.group', string='Tipo de trabajo')
 #    bom_easy_id = fields.Many2one('mrp.bom', string='Receta')
     printed_expiration = fields.Date('Caducidad', store=True)
+    # Nuevo campo para cambar fechas de SM de elaboraciones documentadas de forma tardía:
+    elaboration_date = fields.Datetime('Fecha elaboración', store=True, copy=False)
 
+    @api.depends('elaboration_date')
+    def _update_mrp_stock_move_date(self):
+        stockmoves = self.env['stock.move'].search([('production_id','=',self.id)])
+        for sm in stockmoves:
+            sm['date'] = self.elaboration_date
 
