@@ -17,8 +17,8 @@ class MrpBom(models.Model):
     # No funciona, lo hago con AS hasta que pueda dedicar más tiempo:
     @api.onchange('elaboration_date')
     def update_mrp_stock_move_date(self):
-        stockmoves = self.env['stock.move'].search([('production_id','=',self.id)])
-        raise UserError(stockmoves)
-        for sm in stockmoves:
+        sms = self.env['stock.move'].search([('production_id','=',self.id)])
+        print(sms)
+        for sm in sms:
             sm['date'] = self.elaboration_date
 
