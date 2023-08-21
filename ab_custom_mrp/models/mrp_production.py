@@ -14,11 +14,10 @@ class MrpBom(models.Model):
     # Nuevo campo para cambar fechas de SM de elaboraciones documentadas de forma tardía:
     elaboration_date = fields.Datetime('Fecha elaboración', store=True, copy=False)
 
-    # No funciona, lo hago con AS hasta que pueda dedicar más tiempo:
+    # No funciona, lo hago con AS manaul hasta que pueda dedicar más tiempo:
     @api.onchange('elaboration_date')
     def update_mrp_stock_move_date(self):
         sms = self.env['stock.move'].search([('production_id','=',self.id)])
-        print(sms)
         for sm in sms:
             sm['date'] = self.elaboration_date
 
