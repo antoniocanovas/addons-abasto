@@ -3,7 +3,7 @@
 
     <record id="small_label_production_view" model="ir.actions.report">
         <field name="name">Etiqueta Pequeña de Producto Terminado</field>
-        <field name="model">mrp</field>
+        <field name="model">mrp.label_production_view_pdf</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">ab_reports.small_label_production_view_report</field>
         <field name="report_file">ab_reports.small_label_production_view_report</field>
