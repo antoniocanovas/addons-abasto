@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="small_label_production_view" model="ir.actions.report">
+        <field name="name">Etiqueta Pequeña de Producto Terminado</field>
+        <field name="model">mrp.label_production_view_pdf</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ab_reports.small_label_production_view_report</field>
+        <field name="report_file">ab_reports.small_label_production_view_report</field>
+        <field name="print_report_name">((str(object.name) or '_'))</field>
+        <field name="attachment">((str(object.name) or '_')+'.pdf')</field>
+        <field name="binding_model_id" ref="mrp.model_label_production_view_pdf"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="small_label_production_view_document">
+        <t t-name="small_label_production_view_document">
+            <t t-call="web.external_layout">
+            </t>
+        </t>
+    </template>
+
+    <template id="small_label_production_view_report">
+        <t t-name="small_label_production_view_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="ab_reports.small_label_production_view_document"/>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
