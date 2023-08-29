@@ -10,9 +10,17 @@
                 <xpath expr="//th" position="replace">
                     <th class="table-active text-center align-middle" style="height: 4rem;">
                         <strong t-field="product.nombre_etiqueta"/>
-                        <br/>
+                        <br></br>
+                        <span style="" t-field="product.list_price" t-options='{"widget": "float", "precision": 2}' t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>€
+                    </th>
+                </xpath>
+                <xpath expr="//th" position="after">
+                    <th class="table-active text-center align-middle" style="">
                         <img t-if="env.company.logo" t-att-src="image_data_uri(env.company.logo)" style="height: 50px; width: 100px;" alt="Logo"/>
                     </th>
+                </xpath>
+                <xpath expr="//td" position="attributes">
+                    <attribute name="colspan">2</attribute>
                 </xpath>
             </data>
 
