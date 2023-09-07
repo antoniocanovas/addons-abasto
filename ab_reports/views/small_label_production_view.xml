@@ -13,8 +13,8 @@
         <field name="binding_type">report</field>
     </record>
 
-    <template id="small_label_production_view">
-        <t t-name="small_label_production_view">
+    <template id="small_label_production_view_document">
+        <t t-name="small_label_production_view_document">
             <t t-call="web.external_layout">
             </t>
         </t>
