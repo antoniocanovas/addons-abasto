@@ -14,79 +14,111 @@
     </record>
 
     <template id="small_label_production_view_document">
-        <t t-name="small_label_production_view_document">
-            <t t-call="web.basic_layout">
-                <div class="page">
-                    <t t-set="uom_categ_unit" t-value="env.ref('uom.product_uom_categ_unit')"/>
-                    <t t-foreach="docs" t-as="production">
-                        <t t-foreach="production.move_finished_ids" t-as="move">
-                            <t t-if="production.state == 'done'">
-                                <t t-set="move_lines" t-value="move.move_line_ids.filtered(lambda x: x.state == 'done' and x.qty_done)"/>
-                            </t>
-                            <t t-else="">
-                                <t t-set="move_lines" t-value="move.move_line_ids.filtered(lambda x: x.state != 'done' and x.product_qty)"/>
-                            </t>
-                            <t t-foreach="move_lines" t-as="move_line">
-                                <t t-if="move_line.product_uom_id.category_id == uom_categ_unit">
-                                    <t t-set="qty" t-value="int(move_line.qty_done)"/>
+        <t t-name="ab_reports.small_label_production_view_document">
+            <t t-name="small_label_production_view_document">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <t t-set="uom_categ_unit" t-value="env.ref('uom.product_uom_categ_unit')"/>
+                        <t t-foreach="docs" t-as="production">
+                            <t t-foreach="production.move_finished_ids" t-as="move">
+                                <t t-if="production.state == 'done'">
+                                    <t t-set="move_lines" t-value="move.move_line_ids.filtered(lambda x: x.state == 'done' and x.qty_done)"/>
                                 </t>
                                 <t t-else="">
-                                    <t t-set="qty" t-value="1"/>
+                                    <t t-set="move_lines" t-value="move.move_line_ids.filtered(lambda x: x.state != 'done' and x.product_qty)"/>
                                 </t>
-                                <t t-foreach="range(qty)" t-as="item">
-                                    <t t-translation="off">
-                                        <div style="display: inline-table; height: 10rem; width: 32%;">
-                                            <table class="table table-bordered" style="border: 2px solid black;" t-if="production.move_finished_ids">
-                                                <tr>
-                                                    <th class="table-active text-left" style="height:4rem;">
-                                                        <span t-esc="move.product_id.display_name"/>
-                                                        <br/>
-                                                        <span>Quantity:</span>
-                                                        <t t-if="move_line.product_uom_id.category_id == uom_categ_unit">
-                                                            <span>1.0</span>
-                                                            <span t-field="move_line.product_uom_id" groups="uom.group_uom"/>
-                                                        </t>
-                                                        <t t-else="">
-                                                            <span t-esc="move_line.product_uom_qty" t-if="move_line.state !='done'"/>
-                                                            <span t-esc="move_line.qty_done" t-if="move_line.state =='done'"/>
-                                                            <span t-field="move_line.product_uom_id" groups="uom.group_uom"/>
-                                                        </t>
-                                                    </th>
-                                                </tr>
-                                                <t t-if="move_line.product_id.tracking != 'none'">
+                                <t t-foreach="move_lines" t-as="move_line">
+                                    <t t-if="move_line.product_uom_id.category_id == uom_categ_unit">
+                                        <t t-set="qty" t-value="int(move_line.qty_done)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-set="qty" t-value="1"/>
+                                    </t>
+                                    <t t-foreach="range(qty)" t-as="item">
+                                        <t t-translation="off">
+                                            <div style="display: inline-table; margin: 0px; padding: 0px;">
+                                                <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 600px; height: 615px; margin-right: 10px; ">
                                                     <tr>
-                                                        <td class="text-center align-middle">
-                                                            <t t-if="move_line.lot_name or move_line.lot_id">
-                                                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', move_line.lot_name or move_line.lot_id.name, 600, 150)" style="width:100%;height:4rem" alt="Barcode"/>
-                                                                <span t-esc="move_line.lot_name or move_line.lot_id.name"/>
-                                                            </t>
-                                                            <t t-else="">
-                                                                <span class="text-muted">No barcode available</span>
-                                                            </t>
+                                                        <td colspan="2" class="table-active" style="height: 3.5rem; font-size: 18px;">
+                                                            <div style="display: flex; align-items: center;">
+                                                                <div style="text-align: right; margin-right: 10px; margin-top: -10px;"><strong style="font-size: 18px;" t-field="move_line.product_id.nombre_etiqueta"/></div>
+                                                                <div>
+                                                                    <img t-if="env.company.logo" t-att-src="image_data_uri(env.company.logo)" style="height: 80px; width: 160px; text-align: left; margin: -10px; margin-left: 10px;" alt="Logo"/>
+                                                                    <div style="text-align: right; margin-right: 10px; margin-bottom: -10px; font-size: 18px;">
+                                                                        <strong style="">Price:</strong>
+                                                                        <strong style="" t-field="move_line.product_id.lst_price" t-options="{'widget': 'monetary', 'display_currency': move_line.company_id.currency_id}"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </td>
                                                     </tr>
-                                                </t>
-                                                <t t-if="move_line.product_id.tracking == 'none'">
-                                                    <tr>
-                                                        <td class="text-center align-middle" style="height: 6rem;">
-                                                            <t t-if="move_line.product_id.barcode">
-                                                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', move_line.product_id.barcode, 600, 150)" style="width:100%;height:4rem" alt="Barcode"/>
-                                                                <span t-esc="move_line.product_id.barcode"/>
-                                                            </t>
-                                                            <t t-else="">
-                                                                <span class="text-muted">No barcode available</span>
-                                                            </t>
-                                                        </td>
-                                                    </tr>
-                                                </t>
-                                            </table>
-                                        </div>
+                                                    <t t-if="move_line.product_id.ingrediente">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <p style="margin: 0; padding: 0px;">Ingredients: <span t-field="move_line.product_id.ingrediente"/></p>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="move_line.product_id.conservante">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <p style="margin: 0; padding: 0px;">Preservatives and dyes: <span t-field="move_line.product_id.conservante"/></p>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="move_line.product_id.alergeno">
+                                                        <tr>
+                                                            <th colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <span t-field="move_line.product_id.alergeno"/>
+                                                            </th>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="move_line.product_id.conservacion">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <p style="margin: 0; padding: 0px;">Conservation: <span t-field="move_line.product_id.conservacion"/></p>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="env.company.reg_sanitario and env.company.aut_sanitaria">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <span t-field="env.company.reg_sanitario"/>|<span t-field="env.company.aut_sanitaria"/>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="production.printed_expiration">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <p style="margin: 0; padding: 0px;">Expiration date: <span t-field="production.printed_expiration"/></p>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="production.lot_producing_id">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <p style="margin: 0; padding: 0px;">Lot number: <span t-field="production.lot_producing_id"/></p>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="move_line.product_id.qr_url and move_line.product_id.qr_image">
+                                                        <tr>
+                                                            <td colspan="2" style="font-size: 14px; margin: 0px; padding: 0px; text-align:center;">
+                                                                <span t-field="move_line.product_id.qr_url" style="margin-top: 0px; padding: 5px;"/>
+                                                                <br/>
+                                                                <img t-att-src="'data:image/png;base64,%s' % to_text(move_line.product_id.qr_image)" style="height:70px; width:70px; padding: 5px;"/>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </table>
+                                            </div>
+                                        </t>
                                     </t>
                                 </t>
                             </t>
                         </t>
-                    </t>
-                </div>
+                    </div>
+                </t>
             </t>
         </t>
     </template>
