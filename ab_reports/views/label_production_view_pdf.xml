@@ -9,7 +9,7 @@
             <data>
                 <xpath expr="//t/t/div/t/t/t/t/t/div" position="replace">
                     <div style="display: inline-table; margin: 0px; padding: 0px;">
-                        <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 600px; height: 615px; margin-right: 10px; ">
+                        <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 450px; height: 650px; margin-right: 10px; ">
                             <tr>
                                 <td colspan="2" class="table-active" style="height: 3.5rem; font-size: 18px;">
                                     <div style="display: flex; align-items: center;">
