@@ -5,7 +5,7 @@
         <record id="paperformat_label_production" model="report.paperformat">
             <field name="name">Etiqueta Producción</field>
             <field name="default" eval="True" />
-            <field name="format">Custom</field>
+            <field name="format">custom</field>
             <field name="page_height">100</field>
             <field name="page_width">100</field>
             <field name="orientation">Portrait</field>
@@ -24,7 +24,7 @@
         <record id="paperformat_small_label_production" model="report.paperformat">
             <field name="name">Etiqueta pequeña Producción</field>
             <field name="default" eval="True" />
-            <field name="format">Custom</field>
+            <field name="format">custom</field>
             <field name="page_height">100</field>
             <field name="page_width">70</field>
             <field name="orientation">Portrait</field>
