@@ -13,11 +13,10 @@
         <field name="binding_type">report</field>
     </record>
 
-    <template id="small_label_production_view_document">
-        <t t-name="ab_reports.small_label_production_view_document">
-            <t t-name="small_label_production_view_document">
+    <template id="small_label_production_report_document">
+        <t t-name="ab_reports.small_label_production_report_document">
+            <t t-name="small_label_production_report_document">
                 <t t-call="web.basic_layout">
-                    <!-- -->
                     <div class="page">
                         <t t-set="uom_categ_unit" t-value="env.ref('uom.product_uom_categ_unit')"/>
                         <t t-foreach="docs" t-as="production">
@@ -128,7 +127,7 @@
         <t t-name="small_label_production_view_report">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="ab_reports.small_label_production_view_document"/>
+                    <t t-call="ab_reports.small_label_production_report_document"/>
                 </t>
             </t>
         </t>
