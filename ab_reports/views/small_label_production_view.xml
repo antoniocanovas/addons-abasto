@@ -17,6 +17,7 @@
         <t t-name="ab_reports.small_label_production_view_document">
             <t t-name="small_label_production_view_document">
                 <t t-call="web.basic_layout">
+                    <!-- -->
                     <div class="page">
                         <t t-set="uom_categ_unit" t-value="env.ref('uom.product_uom_categ_unit')"/>
                         <t t-foreach="docs" t-as="production">
