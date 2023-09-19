@@ -17,6 +17,7 @@
         'views/label_production_view_pdf.xml',
         'views/report_simple_barcode.xml',
         'views/small_label_production_view.xml',
+        'data/paper_format.xml',
 
     ],
     "installable": True,
