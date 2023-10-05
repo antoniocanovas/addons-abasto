@@ -101,6 +101,13 @@
                                                             </td>
                                                         </tr>
                                                     </t>
+                                                    <t t-if="production.elaboration_date">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <p style="margin: 0; padding: 0px;">Fecha de elaboración: <span t-field="production.elaboration_date"/></p>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
                                                     <t t-if="move_line.product_id.qr_url and move_line.product_id.qr_image">
                                                         <tr>
                                                             <td colspan="2" style="font-size: 14px; margin: 0px; padding: 0px; text-align:center;">
