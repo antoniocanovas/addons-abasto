@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 09:42+0000\n"
-"PO-Revision-Date: 2023-09-19 11:43+0200\n"
+"POT-Creation-Date: 2023-10-05 14:27+0000\n"
+"PO-Revision-Date: 2023-10-05 16:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #. module: ab_reports
 #: model:ir.actions.report,print_report_name:ab_reports.small_label_production_view
@@ -31,6 +31,11 @@ msgstr "<strong style=\"\">Precio:</strong>"
 #: model_terms:ir.ui.view,arch_db:ab_reports.label_production_view_pdf_inh_report
 msgid "Conservation:"
 msgstr "Conservación:"
+
+#. module: ab_reports
+#: model_terms:ir.ui.view,arch_db:ab_reports.label_production_view_pdf_inh_report
+msgid "Elaboration date:"
+msgstr "Fecha de elaboración:"
 
 #. module: ab_reports
 #: model:ir.actions.report,name:ab_reports.small_label_production_view
