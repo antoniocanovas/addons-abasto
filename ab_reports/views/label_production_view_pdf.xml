@@ -13,7 +13,7 @@
                             <tr>
                                 <td colspan="2" class="table-active" style="height: 3.5rem; font-size: 18px;">
                                     <div style="display: flex; align-items: center;">
-                                        <div style="text-align: right; margin-right: 10px; margin-top: -10px;"><strong style="font-size: 18px;" t-field="move_line.product_id.nombre_etiqueta"/></div>
+                                        <div style="text-align: right; margin-right: 10px; margin-top: -10px;"><strong style="font-size: 26px;" t-field="move_line.product_id.nombre_etiqueta"/></div>
                                         <div>
                                             <img t-if="env.company.logo" t-att-src="image_data_uri(env.company.logo)" style="height: 80px; width: 160px; text-align: left; margin: -10px; margin-left: 10px;" alt="Logo"/>
                                             <div style="text-align: right; margin-right: 10px; margin-bottom: -10px; font-size: 18px;">
