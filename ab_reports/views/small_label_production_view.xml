@@ -37,7 +37,7 @@
                                     <t t-foreach="range(qty)" t-as="item">
                                         <t t-translation="off">
                                             <div style="display: inline-table; margin: 0px; padding: 0px;">
-                                                <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 450px; height: 650px; margin-right: 10px; ">
+                                                <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 600px; height: 605px; margin-right: 10px; ">
                                                     <tr>
                                                         <td colspan="2" class="table-active" style="height: 3.5rem; font-size: 18px;">
                                                             <div style="display: flex; align-items: center;">
@@ -45,7 +45,7 @@
                                                                 <div>
                                                                     <img t-if="env.company.logo" t-att-src="image_data_uri(env.company.logo)" style="height: 80px; width: 160px; text-align: left; margin: -10px; margin-left: 10px;" alt="Logo"/>
                                                                     <div style="text-align: right; margin-right: 10px; margin-bottom: -10px; font-size: 18px;">
-                                                                        <strong style="">Precio:</strong>
+                                                                        <strong style="">Price:</strong>
                                                                         <strong style="" t-field="move_line.product_id.lst_price" t-options="{'widget': 'monetary', 'display_currency': move_line.company_id.currency_id}"/>
                                                                     </div>
                                                                 </div>
@@ -55,14 +55,14 @@
                                                     <t t-if="move_line.product_id.ingrediente">
                                                         <tr>
                                                             <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                                                <p style="margin: 0; padding: 0px;">Ingredientes: <span t-field="move_line.product_id.ingrediente"/></p>
+                                                                <p style="margin: 0; padding: 0px;">Ingredients: <span t-field="move_line.product_id.ingrediente"/></p>
                                                             </td>
                                                         </tr>
                                                     </t>
                                                     <t t-if="move_line.product_id.conservante">
                                                         <tr>
                                                             <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                                                <p style="margin: 0; padding: 0px;">Conservantes y colorantes: <span t-field="move_line.product_id.conservante"/></p>
+                                                                <p style="margin: 0; padding: 0px;">Preservatives and dyes: <span t-field="move_line.product_id.conservante"/></p>
                                                             </td>
                                                         </tr>
                                                     </t>
@@ -76,7 +76,7 @@
                                                     <t t-if="move_line.product_id.conservacion">
                                                         <tr>
                                                             <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                                                <p style="margin: 0; padding: 0px;">Conservación: <span t-field="move_line.product_id.conservacion"/></p>
+                                                                <p style="margin: 0; padding: 0px;">Conservation: <span t-field="move_line.product_id.conservacion"/></p>
                                                             </td>
                                                         </tr>
                                                     </t>
@@ -90,21 +90,28 @@
                                                     <t t-if="production.printed_expiration">
                                                         <tr>
                                                             <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                                                <p style="margin: 0; padding: 0px;">Fecha de caducidad: <span t-field="production.printed_expiration"/></p>
+                                                                <p style="margin: 0; padding: 0px;">Expiration date: <span t-field="production.printed_expiration" t-options="{'widget': 'date'}"/></p>
                                                             </td>
                                                         </tr>
                                                     </t>
                                                     <t t-if="production.lot_producing_id">
                                                         <tr>
                                                             <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                                                <p style="margin: 0; padding: 0px;">N. de lote <span t-field="production.lot_producing_id"/></p>
+                                                                <p style="margin: 0; padding: 0px;">Lot number: <span t-field="production.lot_producing_id"/></p>
                                                             </td>
                                                         </tr>
                                                     </t>
                                                     <t t-if="production.elaboration_date">
                                                         <tr>
                                                             <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                                                <p style="margin: 0; padding: 0px;">Fecha de elaboración: <span t-field="production.elaboration_date"/></p>
+                                                                <p style="margin: 0; padding: 0px;">Elaboration date: <span t-field="production.elaboration_date" t-options="{'widget': 'date'}"/></p>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="production.name">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <p style="margin: 0; padding: 0px;">Orden: <span t-field="production.name"/></p>
                                                             </td>
                                                         </tr>
                                                     </t>

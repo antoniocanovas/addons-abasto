@@ -62,7 +62,7 @@
                             <t t-if="production.printed_expiration">
                                 <tr>
                                     <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                        <p style="margin: 0; padding: 0px;">Expiration date: <span t-field="production.printed_expiration"/></p>
+                                        <p style="margin: 0; padding: 0px;">Expiration date: <span t-field="production.printed_expiration" t-options="{'widget': 'date'}"/></p>
                                     </td>
                                 </tr>
                             </t>
@@ -76,7 +76,14 @@
                             <t t-if="production.elaboration_date">
                                 <tr>
                                     <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                        <p style="margin: 0; padding: 0px;">Elaboration date: <span t-field="production.elaboration_date"/></p>
+                                        <p style="margin: 0; padding: 0px;">Elaboration date: <span t-field="production.elaboration_date" t-options="{'widget': 'date'}"/></p>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="production.name">
+                                <tr>
+                                    <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                        <p style="margin: 0; padding: 0px;">Orden: <span t-field="production.name"/></p>
                                     </td>
                                 </tr>
                             </t>
