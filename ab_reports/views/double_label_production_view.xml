@@ -36,9 +36,10 @@
                         </t>
                         <t t-foreach="range(qty)" t-as="item">
                         <t t-translation="off">
-                            <div style="display: inline-table; margin: 0px; padding: 0px;">
-                                <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 600px; height: 605px; margin-right: 10px; ">
-                                    <tr>
+                        <div style="display: inline-table; margin: 0px; padding: 0px;">
+                            <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 600px; height: 605px; margin-right: 10px; ">
+                                <tr>
+                                    <td>
                                         <td>
                                             <tr>
                                                 <td colspan="2" class="table-active" style="height: 3.5rem; font-size: 18px;">
