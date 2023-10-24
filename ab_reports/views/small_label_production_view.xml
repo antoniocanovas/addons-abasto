@@ -118,7 +118,7 @@
                                                     <t t-if="production.user_id">
                                                         <tr>
                                                             <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                                                <p style="margin: 0; padding: 0px;">Elaborador: <span t-field="production.user_id"/></p>
+                                                                <p style="margin: 0; padding: 0px;">Produced by: <span t-field="production.user_id"/></p>
                                                             </td>
                                                         </tr>
                                                     </t>
