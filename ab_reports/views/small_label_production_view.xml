@@ -36,7 +36,7 @@
                                     </t>
                                     <t t-foreach="range(qty)" t-as="item">
                                         <t t-translation="off">
-                                             <div style="display: inline-table; margin-right: 15px; margin-left: -5px; padding: 0px;">
+                                            <div style="display: inline-table; margin-right: 15px; margin-left: -5px; padding: 0px;">
                                                 <table class="table table-bordered mb-0" style="border: 2px solid black;page-break-inside:avoid;table-layout: fixed; width: 475px; height: 675px; margin-right: 10px; ">
                                                     <tr>
                                                         <td colspan="2" class="table-active" style="height: 3.5rem; font-size: 18px;">
@@ -112,6 +112,13 @@
                                                         <tr>
                                                             <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
                                                                 <p style="margin: 0; padding: 0px;">Order: <span t-field="production.name"/></p>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <t t-if="production.user_id">
+                                                        <tr>
+                                                            <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                                                <p style="margin: 0; padding: 0px;">Elaborador: <span t-field="production.user_id"/></p>
                                                             </td>
                                                         </tr>
                                                     </t>
