@@ -6,16 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-11 07:16+0000\n"
-"PO-Revision-Date: 2023-10-11 07:16+0000\n"
+"POT-Creation-Date: 2023-10-24 10:37+0000\n"
+"PO-Revision-Date: 2023-10-24 13:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4\n"
 
 #. module: ab_reports
+#: model:ir.actions.report,print_report_name:ab_reports.double_label_production_view
 #: model:ir.actions.report,print_report_name:ab_reports.small_label_production_view
 msgid "((str(object.name) or '_'))"
 msgstr ""
@@ -34,6 +37,11 @@ msgstr "Conservación:"
 #: model_terms:ir.ui.view,arch_db:ab_reports.label_production_view_pdf_inh_report
 msgid "Elaboration date:"
 msgstr "Fecha de elaboración:"
+
+#. module: ab_reports
+#: model:ir.actions.report,name:ab_reports.double_label_production_view
+msgid "Etiqueta Doble de Producto Terminado"
+msgstr ""
 
 #. module: ab_reports
 #: model:ir.actions.report,name:ab_reports.small_label_production_view
@@ -70,3 +78,8 @@ msgstr "Orden:"
 #: model_terms:ir.ui.view,arch_db:ab_reports.label_production_view_pdf_inh_report
 msgid "Preservatives and dyes:"
 msgstr "Conservantes y colorantes:"
+
+#. module: ab_reports
+#: model_terms:ir.ui.view,arch_db:ab_reports.label_production_view_pdf_inh_report
+msgid "Produced by:"
+msgstr "Elaborado por:"
