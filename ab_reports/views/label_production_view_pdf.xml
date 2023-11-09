@@ -27,76 +27,76 @@
                             <t t-if="move_line.product_id.ingrediente">
                                 <tr>
                                     <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                        <p style="margin: 0; padding: 0px;">Ingredients: <span t-field="move_line.product_id.ingrediente"/></p>
+                                        <p style="margin-bottom: -30px; padding: 0px;">Ingredients: <span t-field="move_line.product_id.ingrediente"/></p>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="move_line.product_id.conservante">
                                 <tr>
                                     <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
-                                        <p style="margin: 0; padding: 0px;">Preservatives and dyes: <span t-field="move_line.product_id.conservante"/></p>
+                                        <p style="margin-bottom: -30px; padding: 0px;">Preservatives and dyes: <span t-field="move_line.product_id.conservante"/></p>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="move_line.product_id.alergeno">
                                 <tr>
-                                    <th colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                    <th colspan="2" style="width: 50%; font-size: 16px; margin-bottom: -30px; padding: 0px;">
                                         <span t-field="move_line.product_id.alergeno"/>
                                     </th>
                                 </tr>
                             </t>
                             <t t-if="move_line.product_id.conservacion">
                                 <tr>
-                                    <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                    <td colspan="2" style="width: 50%; font-size: 16px; margin-bottom: -30px; padding: 0px;">
                                         <p style="margin: 0; padding: 0px;">Conservation: <span t-field="move_line.product_id.conservacion"/></p>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="env.company.reg_sanitario and env.company.aut_sanitaria">
                                 <tr>
-                                    <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                    <td colspan="2" style="width: 50%; font-size: 16px; margin-bottom: -30px; padding: 0px;">
                                         <span t-field="env.company.reg_sanitario"/>|<span t-field="env.company.aut_sanitaria"/>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="production.printed_expiration">
                                 <tr>
-                                    <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                    <td colspan="2" style="width: 50%; font-size: 16px; margin-bottom: -30px; padding: 0px;">
                                         <p style="margin: 0; padding: 0px;">Expiration date: <span t-field="production.printed_expiration" t-options="{'widget': 'date'}"/></p>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="production.lot_producing_id">
                                 <tr>
-                                    <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                    <td colspan="2" style="width: 50%; font-size: 16px; margin-bottom: -30px; padding: 0px;">
                                         <p style="margin: 0; padding: 0px;">Lot number: <span t-field="production.lot_producing_id"/></p>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="production.elaboration_date">
                                 <tr>
-                                    <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                    <td colspan="2" style="width: 50%; font-size: 16px; margin-bottom: -30px; padding: 0px;">
                                         <p style="margin: 0; padding: 0px;">Elaboration date: <span t-field="production.elaboration_date" t-options="{'widget': 'date'}"/></p>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="production.name">
                                 <tr>
-                                    <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                    <td colspan="2" style="width: 50%; font-size: 16px; margin-bottom: -30px; padding: 0px;">
                                         <p style="margin: 0; padding: 0px;">Order: <span t-field="production.name"/></p>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="production.user_id">
                                 <tr>
-                                    <td colspan="2" style="width: 50%; font-size: 16px; margin: 0px; padding: 0px;">
+                                    <td colspan="2" style="width: 50%; font-size: 16px; margin-bottom: -30px; padding: 0px;">
                                         <p style="margin: 0; padding: 0px;">Produced by: <span t-field="production.user_id"/></p>
                                     </td>
                                 </tr>
                             </t>
                             <t t-if="move_line.product_id.qr_url and move_line.product_id.qr_image">
                                 <tr>
-                                    <td colspan="2" style="font-size: 14px; margin: 0px; padding: 0px; text-align:center;">
+                                    <td colspan="2" style="font-size: 14px; mmargin-bottom: -30px; padding: 0px; text-align:center;">
                                         <span t-field="move_line.product_id.qr_url" style="margin-top: 0px; padding: 5px;"/>
                                         <br/>
                                         <img t-att-src="'data:image/png;base64,%s' % to_text(move_line.product_id.qr_image)" style="height:70px; width:70px; padding: 5px;"/>
