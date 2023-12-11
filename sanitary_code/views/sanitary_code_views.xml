@@ -56,11 +56,6 @@
                     <h1>
                         <field name="name"/>
                     </h1>
-                    <group>
-                        <field name="manufacturer_id"/>
-                        <field name="product_tmpl_ids"/>
-                        <field name="active"/>
-                    </group>
                 </sheet>
             </form>
         </field>
