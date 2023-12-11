@@ -44,11 +44,9 @@
         <field name="type">tree</field>
     </record>
 
-                    <!--
     <record id="sanitary_code_default_form" model="ir.ui.view">
         <field name="name">sanitary.code.default.form</field>
         <field name="model">sanitary.code</field>
-        <field name="inherit_id">False</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -72,7 +70,6 @@
         <field name="priority">16</field>
         <field name="type">form</field>
     </record>
-                    -->
 
 
 </odoo>
