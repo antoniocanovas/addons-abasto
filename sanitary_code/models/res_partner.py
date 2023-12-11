@@ -6,5 +6,5 @@ from odoo import fields, models, api
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    sanitary_code_ids = fields.One2many('sanitary.code', 'manufacturer_id', string='Reg. sanitarios',
+    sanitary_code_ids = fields.One2many('sanitary.code', 'manufacturer_id', string='Sanitary codes',
                                         store=True, copy=False)
