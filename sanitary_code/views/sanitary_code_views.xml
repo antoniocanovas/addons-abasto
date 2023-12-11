@@ -51,6 +51,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <!--
                     <h1>
                         <field name="name"/>
                     </h1>
@@ -59,6 +60,7 @@
                         <field name="product_tmpl_ids"/>
                         <field name="active"/>
                     </group>
+                    -->
                 </sheet>
             </form>
         </field>
