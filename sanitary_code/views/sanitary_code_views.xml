@@ -25,7 +25,7 @@
         <field name="web_icon" eval="False"/>
     </record>
 
-
+<!--
     <record id="sanitary_code_default_tree" model="ir.ui.view">
         <field name="name">sanitary.code.default.tree</field>
         <field name="model">sanitary.code</field>
@@ -45,7 +45,7 @@
         <field name="priority">16</field>
         <field name="type">tree</field>
     </record>
-
+-->
 
     <record id="sanitary_code_default_form" model="ir.ui.view">
         <field name="name">sanitary.code.default.form</field>
