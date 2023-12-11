@@ -240,7 +240,7 @@ msgstr "Usuario responsable"
 #. module: sanitary_code
 #: model:ir.model,name:sanitary_code.model_sanitary_code
 msgid "Sanitary Codes"
-msgstr "Códigos sanitarios"
+msgstr "Registros sanitarios"
 
 #. module: sanitary_code
 #: model:ir.actions.act_window,name:sanitary_code.action_sanitary_code
@@ -249,7 +249,7 @@ msgstr "Códigos sanitarios"
 #: model:ir.ui.menu,name:sanitary_code.menu_sanitary_code
 #: model_terms:ir.actions.act_window,help:sanitary_code.action_sanitary_code
 msgid "Sanitary codes"
-msgstr "Códigos sanitarios"
+msgstr "Registros sanitarios"
 
 #. module: sanitary_code
 #: model:ir.model.fields,help:sanitary_code.field_sanitary_code__activity_state
