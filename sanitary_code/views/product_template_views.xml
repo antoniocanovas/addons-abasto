@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <field name="categ_id" position="after">
                 <field name="manufacturer_id"/>
-                <field name="sanitary_code_id" attrs="{'domain':[('manufacturer_id','=',manufacturer_id)]}"/>
+                <field name="sanitary_code_id"/>
             </field>
         </field>
     </record>
