@@ -6,7 +6,7 @@
 ##############################################################################
 
 {
-    "name": "Task tree view for waiters",
+    "name": "Sanitary codes",
     "version": "14.0.1.0.0",
     "category": "Project",
     "author": "www.serincloud.com",
@@ -14,11 +14,14 @@
     "website": "www.serincloud.com",
     "license": "AGPL-3",
     "depends": [
-        'project',
-        'project_timesheet_time_control',
-        'web_widget_open_tab',
+        'contacts',
+        'product',
+        'purchase',
     ],
     "data": [
+        'security/ir.model.access.csv'
+        'views/sanitary_code_views.xml'
+        'views/product_template_views.xml'
         'views/res_partner_views.xml'
     ],
     "installable": True,
