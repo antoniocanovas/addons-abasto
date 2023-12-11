@@ -6,5 +6,5 @@ from odoo import models, fields, api, _
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    sanitary_code_ids = fields.Many2one('sanitary.code', string='Reg. sanitario', store=True, copy=True)
+    sanitary_code_id = fields.Many2one('sanitary.code', string='Reg. sanitario', store=True, copy=True)
     manufacturer_id = fields.Many2one('res.partner', string='Manufacturer', store=True, copy=True)
