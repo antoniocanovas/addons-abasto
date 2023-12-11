@@ -30,7 +30,6 @@
     <record id="sanitary_code_default_tree" model="ir.ui.view">
         <field name="name">sanitary.code.default.tree</field>
         <field name="model">sanitary.code</field>
-        <field name="inherit_id">False</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
