@@ -20,9 +20,9 @@
     ],
     "data": [
         'security/ir.model.access.csv',
-#        'views/sanitary_code_views.xml',
-#        'views/product_template_views.xml',
-#        'views/res_partner_views.xml',
+        'views/sanitary_code_views.xml',
+        'views/product_template_views.xml',
+        'views/res_partner_views.xml',
     ],
     "installable": True,
 }
