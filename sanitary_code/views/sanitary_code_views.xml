@@ -55,7 +55,7 @@
                     </h1>
                     <group>
                         <field name="manufacturer_id"/>
-                        <field name="product_tmpl_ids"/>
+                        <field name="product_tmpl_ids" readonly="1"/>
                         <field name="active"/>
                     </group>
                 </sheet>
