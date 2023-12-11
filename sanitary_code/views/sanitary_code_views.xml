@@ -5,8 +5,6 @@
     <record id="action_sanitary_code" model="ir.actions.act_window">
         <field name="binding_model_id" eval="False"/>
         <field name="binding_type">action</field>
-        <field name="context"></field>
-        <field name="domain"></field>
         <field name="groups_id" eval="[(6, 0, [])]"/>
         <field name="help"><![CDATA[<p> Sanitary codes </p>]]></field>
         <field name="limit">80</field>
@@ -14,7 +12,6 @@
         <field name="res_model">sanitary.code</field>
         <field name="target">current</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="view_id" ref="sanitary_code_default_tree"/>
         <field name="view_mode">tree,form</field>
     </record>
 
