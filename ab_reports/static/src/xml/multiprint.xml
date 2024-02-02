@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="OrderChangeReceipt" t-inherit="pos_restaurant.OrderChangeReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[@class='pos-order-receipt-cancel']/t/div[@class='multiprint-flex']" position="replace">
+            <div style="text-align:left; font-size: 40px">
+                <t t-esc="change.qty"/>
+                <span t-esc="change.name_wrapped[0]"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='multiprint-flex']" position="replace">
+            <div style="text-align:left; font-size: 40px">
+                <t t-esc="change.qty"/>
+                <span t-esc="change.name_wrapped[0]"/>
+            </div>
+        </xpath>
+    </t>
+
+</templates>
