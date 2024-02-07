@@ -15,15 +15,12 @@
         'mrp',
     ],
     "data": [
-        'views/pos_custom_templates.xml',
         'views/label_production_view_pdf.xml',
         'views/report_simple_barcode.xml',
         'views/small_label_production_view.xml',
         'views/double_label_production_view.xml',
         'data/paper_format.xml',
     ],
-    "qweb": [
-            "static/src/xml/multiprint.xml",
-        ],
+
     "installable": True,
 }

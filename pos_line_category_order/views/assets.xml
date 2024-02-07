@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <template id="pos_order_priority" inherit_id="point_of_sale.assets" name="button add">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/pos_line_category_order/static/src/js/multiprint.js"/>
+        </xpath>
+    </template>
+
+</odoo>
