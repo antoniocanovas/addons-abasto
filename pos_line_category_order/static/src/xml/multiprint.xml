@@ -75,6 +75,23 @@
                <br />
             </t>
         </xpath>
+        <xpath expr="//t[@t-if='changes.floor || changes.table']" position="replace">
+            <div class="pos-receipt-title">
+                    <t t-esc="changes.floor" /> / <t t-esc="changes.table"/> / <t t-esc="changes.waiter"/>
+                </div>
+        </xpath>
+        <xpath expr="//div[@class='pos-order-receipt-cancel']/t/div[@class='multiprint-flex']" position="replace">
+            <div style="text-align:left; font-size: 40px">
+                <t t-esc="change.qty"/>
+                <span t-esc="change.name_wrapped[0]"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='multiprint-flex']" position="replace">
+            <div style="text-align:left; font-size: 40px">
+                <t t-esc="change.qty"/>
+                <span t-esc="change.name_wrapped[0]"/>
+            </div>
+        </xpath>
     </t>
 
 </templates>

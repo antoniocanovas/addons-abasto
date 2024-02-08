@@ -35,7 +35,6 @@ models.Order = models.Order.extend({
         return resume;
     },
     computeChanges: function(categories){
-        debugger;
         var current_res = this.build_line_resume();
         var old_res     = this.saved_resume || {};
         var json        = this.export_as_JSON();
@@ -144,10 +143,18 @@ models.Order = models.Order.extend({
             hours   = hours.length < 2 ? ('0' + hours) : hours;
         var minutes = '' + d.getMinutes();
             minutes = minutes.length < 2 ? ('0' + minutes) : minutes;
-        debugger;
+
+        var j_waiter = ""
+         if (json.ms_info['changed']) {
+          j_waiter = json.ms_info['changed']['user']['name'];
+        }else if(json.ms_info['created']){
+          j_waiter = json.ms_info['created']['user']['name'];
+        }
+
         return {
             'new': add,
             'cancelled': rem,
+            'waiter': j_waiter,
             'table': json.table || false,
             'floor': json.floor || false,
             'name': json.name  || 'unknown order',
