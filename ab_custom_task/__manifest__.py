@@ -19,7 +19,7 @@
         'web_widget_open_tab',
     ],
     "data": [
-        'views/res_partner_views.xml'
+        'views/project_task_views.xml'
     ],
     "installable": True,
 }
